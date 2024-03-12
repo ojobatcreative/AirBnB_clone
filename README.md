@@ -3,12 +3,11 @@
 # HolbertonBnB
 ## Cloning of AirBnB Website
 
-The goal of the project is to deploy on your server a simple copy of the AirBnB website
+The goal of the project is to deploy on my server a simple copy of the AirBnB website
 A complete web application composed by:
-  - A command interpreter to manipulate data without a visual interface, like in a Shell (perfect for development and debugging)
-  - A website (the front-end) that shows the final product to everybody: static and dynamic
-  - An API that provides a communication interface between the front-end and your data (retrieve, create, delete, update them)
-
+	- A command interpreter, similar to that found in a Shell, that allows data manipulation without a visual user interface; ideal for debugging and development
+	- A front-end website that displays the finished product to all users: both inert and elastic
+	- An API that acts as a conduit for data (upload, update, remove, and retrieve) between the front end and your database.
 
 # What’s a command interpreter?
 Do you remember the Shell? It’s exactly the same but limited to a specific use-case. In our case, we want to be able to manage the objects of our project:
@@ -22,7 +21,7 @@ Do you remember the Shell? It’s exactly the same but limited to a specific use
 
 # Execution
 
-Your shell should work like this in interactive mode:
+The shell should work like this in interactive mode:
 
 ```
 $ ./console.py
@@ -71,7 +70,7 @@ $
   - manage (create, update, destroy, etc) objects via a console / command interpreter
   - store and persist objects to a file (JSON file)
 
-The first piece is to manipulate a powerful storage system. This storage engine will give us an abstraction between “My object” and “How they are stored and persisted”. This means: from your console code (the command interpreter itself) and from the front-end and RestAPI you will build later, you won’t have to pay attention (take care) of how your objects are stored.
+Using a strong storage system is the first step. We will be able to abstract from "My object" and "How they are stored and persisted" thanks to this storage engine. This implies that you won't have to worry about how your objects are stored from your console code (the command interpreter itself), from the front-end you will create later, or from the RestAPI.
 
 This abstraction will also allow you to change the type of storage easily without updating all of your codebase.
 
@@ -134,13 +133,13 @@ The console will be a tool to validate this storage engine
 
 # Storage
 
-Persistency is really important for a web application. It means: every time your program is executed, it starts with all objects previously created from another execution. Without persistency, all the work done in a previous execution won’t be saved and will be gone.
+It is imperative that a web application be persistent. This implies that every time your program runs, all of the objects from a previous run are loaded into memory. All of the work completed in an earlier execution will not be preserved and will be lost without persistence.
 
-In this project, you will manipulate 2 types of storage: file and database. For the moment, you will focus on file.
+You will work with both file and database storage in this project. You will concentrate on file for the time being.
 
-Why separate “storage management” from “model”? It’s to make your models modular and independent. With this architecture, you can easily replace your storage system without re-coding everything everywhere.
+Why are "model" and "storage management" different? The goal is to create autonomous and modular models. With this architecture, changing your storage system is simple and doesn't require rewriting any code.
 
-You will always use class attributes for any object. Why not instance attributes? For 3 reasons:
+For every object, you will always use the class attributes. As opposed to instance attributes, why not? For three reasons:
 
   - Provide easy class description: everybody will be able to see quickly what a model should contain (which attributes, etc…)
   - Provide default value of any attribute
