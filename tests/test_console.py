@@ -106,6 +106,7 @@ class TestHBNBCommand(TestCase):
         """
         all_instances = User.all()
         self.assertIn(User(), all_instances)
+
     def test_State_all(self):
         """
         testing destroy BaseModel command
@@ -137,7 +138,7 @@ class TestHBNBCommand(TestCase):
         with patch('sys.stdout', new=io.StringIO()) as f:
             result = HBNBCommand().onecmd(" BaseModel")
         self.assertTrue(f.getvalue().strip())
-        
+
     def test_BaseModel_count(self):
         """
         testing BaseModel.all() commandd
@@ -158,7 +159,7 @@ class TestHBNBCommand(TestCase):
         """
         all_instances = User.count()
         self.assertIn(User(), all_instances)
-        
+
     def test_State_count(self):
         """
         testing destroy BaseModel command
@@ -190,7 +191,7 @@ class TestHBNBCommand(TestCase):
         with patch('sys.stdout', new=io.StringIO()) as f:
             result = HBNBCommand().onecmd(" BaseModel")
         self.assertTrue(f.getvalue().strip())
-        
+
     def test_BaseModel_show(self):
         """
         testing BaseModel.show() commandd
@@ -211,7 +212,7 @@ class TestHBNBCommand(TestCase):
         """
         all_instances = User.show()
         self.assertIn(User(), all_instances)
-        
+
     def test_State_show(self):
         """
         testing destroy BaseModel command
@@ -239,7 +240,7 @@ class TestHBNBCommand(TestCase):
         """
         all_instances = Place.show()
         self.assertIn(Place(), all_instances)
-        
+
     def test_BaseModel_destroy(self):
         """
         testing BaseModel.destroy() commandd
@@ -260,7 +261,7 @@ class TestHBNBCommand(TestCase):
         """
         all_instances = User.destroy()
         self.assertIn(User(), all_instances)
-        
+
     def test_State_destroy(self):
         """
         testing destroy BaseModel command
@@ -288,7 +289,7 @@ class TestHBNBCommand(TestCase):
         """
         all_instances = Place.destroy()
         self.assertIn(Place(), all_instances)
-        
+
     def test_BaseModel_update(self):
         """
         testing BaseModel.update() commandd
@@ -309,7 +310,7 @@ class TestHBNBCommand(TestCase):
         """
         all_instances = User.update()
         self.assertIn(User(), all_instances)
-        
+
     def test_State_update(self):
         """
         testing update BaseModel command
